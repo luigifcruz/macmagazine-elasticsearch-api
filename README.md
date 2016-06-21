@@ -16,8 +16,9 @@ MacMagazine ElasticSearch API for blog posts.
 ```javascript
 [{
   title: "Hello World",
-  author: "Me",
   date: 1466512415348,
+  author: "Me",
+  id: 345,
   text: "Hello World is a expression...",
   url: "https://macmagazine.com.br/awesomepost",
   thumb: "https://macmagazine.com.br/awesomephoto.jpg" // Optional
