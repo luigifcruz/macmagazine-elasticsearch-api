@@ -1,29 +1,34 @@
 # macmagazine-elasticsearch-api
 MacMagazine ElasticSearch API for blog posts.
 
-### Installation
+### Server
+API hosted at https://api.luigifreitas.me/macmagazine.
 
-  npm install moodle-scraper
-  
 ### Routes
 
-#### GET `/api/elasticsearch/:query`
+#### GET `/macmagazine/search`
 
-##### Variables
-`:query` User RAW search query.
+##### URL Parameters
+Parameter | Type | Required | Description
+--- | --- | --- | ---
+`string` | String | Yes | User RAW search query.
+`size` | Int | Optional | Maximum number of results.
+`type` | `light` | Optional |  Load post without `content`.
+
+##### Example
+https://api.luigifreitas.me/macmagazine/search?string=Tim+Cook&size=5
 
 ##### Output
 ```javascript
-[{
-  title: "Hello World",
-  date: 1466512415348,
-  author: "Me",
-  id: 345,
-  text: "Hello World is a expression...",
-  url: "https://macmagazine.com.br/awesomepost",
-  thumb: "https://macmagazine.com.br/awesomephoto.jpg" // Optional
-}, ...]
+{
+  confirmation: true,
+  length: 1,
+  posts: [{
+    title: "Awesome Post",
+    link: "https://macmagazine.com.br/",
+    id: 345234,
+    date: "2012-12-26 21:49:52",
+    content: "Hello World is a expression..."
+  }]
+}
 ```
-
-
-

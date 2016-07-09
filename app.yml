@@ -1,0 +1,3 @@
+default:
+  port: 45000
+  elasticsearch: 9200
